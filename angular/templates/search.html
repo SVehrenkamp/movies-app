@@ -1,0 +1,37 @@
+
+<div class="row">
+  <div class="large-12 columns">
+    
+    <h2>Search Movies</h2>
+    <input ng-model="query" class="search" type="text" placeholder="search for a movie" id=
+    "search_movies" />
+    <button ng-click="search(query);" class="search">search</button>
+
+    <div class="row">
+
+      <!--No Results-->
+      <div ng-if="!results" class="large-12 columns no-results">
+        <h3><em>no results</em></div>
+      </div>
+
+      <!--Results-->
+      <div ng-if="results" class="large-12 columns no-results">
+        <h3>results</div>
+
+        <div class="row">
+          <div ng-repeat="result in results" class="large-2 small-6 columns result">
+            <a href="#/movie/{{result.id}}">
+              <img ng-if="result.poster_path" class="thumb" src="http://image.tmdb.org/t/p/w300{{result.poster_path}}" />
+              <img ng-if="!result.poster_path" class="thumb" src="assets/images/no-image.jpg" />
+              <p><b>{{result.title}}</b></p>
+            </a>
+          </div>
+      </div>
+
+
+        
+      </div>
+    </div>
+
+  </div>
+</div>

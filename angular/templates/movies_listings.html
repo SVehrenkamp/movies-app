@@ -1,0 +1,74 @@
+<div class="row">
+        <div class="large-12 columns">
+     
+     	<h2>{{heading}}</h2>
+          <div class="row">
+            <div class="large-4 small-12 columns movie-active">
+     
+              <img ng-if="movie_active.poster_path" src="http://image.tmdb.org/t/p/w300{{movie_active.poster_path}}" />
+              <img ng-if="!movie_active.poster_path" src="assets/images/no-image.jpg" />
+     
+              <div class="hide-for-small panel">
+                <h3>{{movie_active.title}}</h3>
+                <h5 class="subheader">
+                	{{movie_active.overview}}
+                </h5>
+                <h6 class="subheader">Rating: 
+                	<span class="fi-star"></span>
+                	<span class="fi-star"></span>
+                	<span class="fi-star"></span>
+                	<span class="fi-star"></span>
+                </h6>
+              </div>
+     
+     		<!--See Movie Details Page Link-->
+              <a href="#">
+              <div class="panel callout radius">
+                <a href="#/movie/{{movie_active.id}}"><h6>See More &rsaquo;</h6></a>
+              </div>
+              </a>
+     
+            </div>
+     
+         
+     
+     
+         
+     
+            <div class="large-8 columns">
+              <div class="row">
+     
+                <div ng-repeat="movie in movies" class="large-4 small-6 columns movie">
+                  	<a href="javascript:void(0)" ng-click="show_details($index);">
+	                  <img ng-if="movie.poster_path" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" />
+                    <img ng-if="!movie.poster_path" src="assets/images/no-image.jpg" />
+	     
+	                  <div class="panel">
+	                    <h5>{{movie.title}}</h5>
+	                    <h6 class="subheader">Rating: {{movie.vote_average}}</h6>
+	                  </div>
+	              	</a>
+                </div>
+
+              </div>
+     
+         
+     
+     
+         
+           
+     
+         
+     
+              </div>
+            </div>
+          </div>
+     
+     
+         
+     
+     
+         
+     
+        </div>
+      </div>

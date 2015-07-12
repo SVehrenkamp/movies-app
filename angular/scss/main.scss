@@ -1,0 +1,67 @@
+@import '../js/vendor/foundation/scss/foundation.scss';
+@import 'footer.scss';
+
+#Main{
+	h1{
+		font-family:Helvetica, Arial, Sans-Serif;
+		color:#FFFFFF;
+	}
+	#main-inner{
+		margin:10px 0px;
+	}
+
+	.movie-active{
+		img{
+			width:303px;
+		}
+	}
+	.movie{
+		min-height:400px;
+		img{
+			width:192px;
+		}
+		h5, h6{
+			font-size:0.8rem;
+		}
+		.panel{
+			padding:1rem 1.25rem;
+		}
+	}
+	.images {
+	  background: #efefef;
+	  padding: 20px;
+	  margin:0px 10px;
+	}
+	.review{
+		background:#eaf3fc;
+		padding:20px;
+		margin:10px;
+	}
+	input#search_movies{
+		padding:10px;
+		font-size:1.2rem;
+	}
+	button.search{
+		width:100%;
+		margin:10px 0px;
+		font-size:1.2rem;
+	}
+	.no-results{
+		text-align:center;
+	}
+	.result{
+		min-height:320px;
+		margin:10px 0px;
+
+		p{
+			font-size:0.8em;
+		}
+
+		img{
+			&.thumb{
+
+			}
+		}
+	}
+
+}
