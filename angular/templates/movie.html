@@ -1,9 +1,21 @@
 
       <div class="row">    
         
+         <div class="large-3 left columns">
+          
+          <p>
+            <img ng-if="movie.poster_path" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" />
+            <img ng-if="!movie.poster_path" src="assets/images/no-image.jpg" />
+          </p>
+          <a href="{{movie.homepage}}">{{movie.homepage}}</a>
+          <p class="details"><b>{{movie.production_companies[0].name}}</b></p>
+          <p class="details"><b>Release Date: </b>{{movie.release_date}}</p>
+          <p class="details"><b>Revenue to date: </b>${{movie.revenue}}</p>
+          <p class="details"><b>Average Rating: </b>{{movie.vote_average}}/10</p>
+            
+        </div>
          
-         
-        <div class="large-9 push-3 columns">
+        <div class="large-9 right columns">
           
           <h3>{{movie.title}} <small ng-if="movie.tagline"><em>&quot;{{movie.tagline}}&quot;</em></small></h3>
           
@@ -33,19 +45,7 @@
         
          
          
-        <div class="large-3 pull-9 columns">
-          
-          <p>
-            <img ng-if="movie.poster_path" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" />
-            <img ng-if="!movie.poster_path" src="assets/images/no-image.jpg" />
-          </p>
-          <a href="{{movie.homepage}}">{{movie.homepage}}</a>
-          <p class="details"><b>{{movie.production_companies[0].name}}</b></p>
-          <p class="details"><b>Release Date: </b>{{movie.release_date}}</p>
-          <p class="details"><b>Revenue to date: </b>${{movie.revenue}}</p>
-          <p class="details"><b>Average Rating: </b>{{movie.vote_average}}/10</p>
-            
-        </div>
+        
         
       </div>
         

@@ -12,15 +12,15 @@
 						});
 						return promise;
 				},
-				now_playing: function(){
-					var promise = $http.get(base_url+'/movie/now_playing?api_key='+api_key)
+				now_playing: function(page){
+					var promise = $http.get(base_url+'/movie/now_playing?page='+page+'&api_key='+api_key)
 						.success(function(data){
 							return data;
 						});
 						return promise;
 				},
-				get_popular: function(){
-					var promise = $http.get(base_url+'/movie/popular?api_key='+api_key)
+				get_popular: function(page){
+					var promise = $http.get(base_url+'/movie/popular?page='+page+'&api_key='+api_key)
 						.success(function(data){
 							return data;
 						});

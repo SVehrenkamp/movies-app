@@ -4,15 +4,31 @@
 			
 			$scope.base_img_url = "http://image.tmdb.org/t/p/w300";
 			$scope.heading = "Popular Movies";
+			$scope.currentPage = 1;
+			$scope.pages = null;
 
 			$scope.show_details = function($index){
 				$scope.movie_active = $scope.movies[$index];
 			}
+			$scope.go_to_page = function(page){
+				console.log('click');
+				Movies.get_popular(page).then(function(resp){
+					$scope.movies = resp.data.results;
 
-			Movies.get_popular().then(function(resp){
+					$scope.pages = resp.data.total_pages;
+					$scope.page = resp.data.page;
+
+					$scope.movie_active = $scope.movies[0];
+				});
+
+			}
+			Movies.get_popular($scope.currentPage).then(function(resp){
 				$scope.movies = resp.data.results;
+
+				$scope.pages = resp.data.total_pages;
+				$scope.page = resp.data.page;
+
 				$scope.movie_active = $scope.movies[0];
-				console.log($scope.movies);
 			});
 
 		});

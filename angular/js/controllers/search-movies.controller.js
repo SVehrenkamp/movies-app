@@ -8,7 +8,7 @@
 
 			$scope.search = function(query){
 				Movies.search_movies(query).then(function(resp){
-					$scope.results = resp.data.results;
+					$scope.results = resp.data.results.length > 1 ? resp.data.results : null;
 					console.log($scope.results);
 				});
 			};
