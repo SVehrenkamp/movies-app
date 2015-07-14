@@ -26,6 +26,22 @@
 		.panel{
 			padding:1rem 1.25rem;
 		}
+		span.add-btn, .favorite{
+		  position: absolute;
+		  top: 8px;
+		  right: 15px;
+		  width: 30px;
+		  background: #ffffff;
+		  text-align: center;
+		  color:#008CBA;
+		  box-shadow: -3px 3px 3px -2px #000;
+		  display:block;
+		  cursor:pointer;
+		  font-size:24px;
+		}
+		span.favorite{
+			color:#9bd347;
+		}
 	}
 	.images {
 	  background: #efefef;

@@ -5,7 +5,23 @@
 
 			$stateProvider
 				.state('new', {
-			        url: '/new',
+			        url: '/new?page',
+			        views: {
+			          "Main": {
+			            templateUrl: '../templates/movies_listings.html',
+			            controller: 'NewMoviesController',
+			            controllerAs: 'NewMovies'
+			          }
+			        },
+			        params: {
+			        	page: {
+			        		value: '1',
+			        		squash: true
+			        	}
+			        }
+		      	})
+		      	.state('new.page', {
+			        url: '/:page',
 			        views: {
 			          "Main": {
 			            templateUrl: '../templates/movies_listings.html',
@@ -31,6 +47,16 @@
 			            templateUrl: '../templates/search.html',
 			            controller: 'SearchMoviesController',
 			            controllerAs: 'SearchMovies'
+			          }
+			        }
+		      	})
+				.state('favorites', {
+			        url: '/favorites',
+			        views: {
+			          "Main": {
+			            templateUrl: '../templates/movies_listings.html',
+			            controller: 'FavoritesController',
+			            controllerAs: 'Favorites'
 			          }
 			        }
 		      	})

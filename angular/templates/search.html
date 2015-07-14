@@ -23,6 +23,8 @@
             <a href="#/movie/{{result.id}}">
               <img ng-if="result.poster_path" class="thumb" src="http://image.tmdb.org/t/p/w300{{result.poster_path}}" />
               <img ng-if="!result.poster_path" class="thumb" src="assets/images/no-image.jpg" />
+              <span ng-if="!movie.favorite" ng-click="add_movie(movie);" class="fi-plus add-btn"></span>
+              <span ng-if="movie.favorite" ng-click="remove_movie(movie)" class="fi-checkbox favorite"></span>
               <p><b>{{result.title}}</b></p>
             </a>
           </div>
