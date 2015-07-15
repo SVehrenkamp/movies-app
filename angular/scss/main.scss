@@ -1,5 +1,7 @@
 @import '../js/vendor/foundation/scss/foundation.scss';
+@import 'animations.scss';
 @import 'footer.scss';
+@import 'watchlist-directive.scss';
 
 #Main{
 	h1{
@@ -26,7 +28,7 @@
 		.panel{
 			padding:1rem 1.25rem;
 		}
-		span.add-btn, .favorite{
+		.list-icon{
 		  position: absolute;
 		  top: 8px;
 		  right: 15px;
@@ -41,6 +43,7 @@
 		}
 		span.favorite{
 			color:#9bd347;
+			-webkit-animation: fall-in 0.5s;
 		}
 	}
 	.images {
@@ -81,3 +84,4 @@
 	}
 
 }
+

@@ -1,0 +1,28 @@
+{
+  "name": "backbone",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SVehrenkamp/movies-app",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "authors": [
+    "svehrenkamp"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.1",
+    "marionette": "~2.4.2",
+    "foundation": "~5.5.2"
+  }
+}
