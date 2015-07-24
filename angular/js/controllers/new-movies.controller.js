@@ -18,6 +18,7 @@
 				movie.favorite = true;
 				WatchList.add_movie(movie);
 				console.log(WatchList.get_movies());
+				console.log(WatchList.get_movie_ids());
 			}
 
 			$scope.go_to_page = function(page){
