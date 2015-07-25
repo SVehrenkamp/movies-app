@@ -17,9 +17,11 @@ define([
 		var View = Backbone.View.extend({
 
 			template: Handlebars.compile(html),
+			header: null,
 
 
 			initialize: function(options){
+				this.header = options.header;
 				var self = this;
 
 				this.collection.fetch().done(function(){
@@ -31,7 +33,7 @@ define([
 			},
 
 			render: function(){
-				var view = this.$el.html(this.template());
+				var view = this.$el.html(this.template({header: this.header}));
 				return this;
 			},
 			afterRender: function(){

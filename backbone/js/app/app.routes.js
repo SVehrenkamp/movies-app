@@ -14,6 +14,7 @@ define([
 				"":"showNowPlaying",
 				"new":"showNowPlaying",
 				"popular":"showPopular",
+				"movie/:id":"showMovieDetails",
 				"search":"showSearch",
 				"favorites":"showFavorites"
 

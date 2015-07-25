@@ -1,0 +1,50 @@
+
+      <div class="row">    
+        
+         <div class="large-3 left columns">
+          
+          <p>
+            <img ng-if="poster_path" src="http://image.tmdb.org/t/p/w300{{poster_path}}" />
+          </p>
+          <a href="{{homepage}}">{{homepage}}</a>
+          <p class="details"><b>Release Date: </b>{{release_date}}</p>
+          <p class="details"><b>Revenue to date: </b>${{revenue}}</p>
+          <p class="details"><b>Average Rating: </b>{{vote_average}}/10</p>
+            
+        </div>
+         
+        <div class="large-9 right columns">
+          
+          <h3>{{title}} <small ng-if="movie.tagline"><em>&quot;{{tagline}}&quot;</em></small></h3>
+          
+          <p>{{overview}}</p>
+          
+          <!--Image Gallery-->
+          <h4>Movie Images</h4>
+          <div class="row images">
+            <!-- <div ng-repeat="image in images | limitTo: limit" class="large-2 small-4 columns">
+              <img src="http://image.tmdb.org/t/p/w300{{image.file_path}}" />
+              
+      		</div> -->
+          </div>
+
+          <!--Reviews-->
+          <h4>Reviews</h4>
+          <div class="row reviews">
+          	<!-- <div ng-repeat="review in reviews" class="large-12 small 12 review">
+          		<p><em><b>&quot;</b>{{review.content}}<b>&quot;</b></em></p>
+          		<p><b><em>- {{review.author}}</em></b></p>
+          	</div> -->
+          </div>	
+
+                
+        </div>
+        
+        
+         
+         
+        
+        
+      </div>
+        
+      
