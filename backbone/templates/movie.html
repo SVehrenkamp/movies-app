@@ -6,12 +6,17 @@
 	                  <div class="panel">
 	                    <h5>{{title}}</h5>
 	                    <h6 class="subheader">Rating: {{vote_average}}</h6>
+                      {{#if favorite}}
                       <div class="list-icon">
-                        <span ng-if="!movie.favorite" ng-click="add_movie(movie);" class="fi-plus add-btn"></span>
+                        <span class="fi-check favorite"></span>
                       </div>
+
+                      {{else}}
                       <div class="list-icon">
-                        <span ng-if="movie.favorite" ng-click="remove_movie(movie)" class="fi-check favorite"></span>
+                        <span class="fi-plus add-btn"></span>
                       </div>
+                      {{/if}}
+
 	                  </div>
 
 	              	</a>
