@@ -10,7 +10,9 @@
 			return{
 				add_movie: function(movie){
 
-					if(watchlist.movie_ids.indexOf(movie.id) != -1){
+					console.log(watchlist.movie_ids.indexOf(movie.id) == -1);
+
+					if(watchlist.movie_ids.indexOf(movie.id) === -1){
 						watchlist.movies.push(movie);
 						watchlist.movie_ids.push(movie.id);	
 					} else {

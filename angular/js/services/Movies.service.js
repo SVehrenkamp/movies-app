@@ -1,8 +1,9 @@
 (function(){
 	angular.module('moviesApp')
-		.service('Movies', function($http){
+		.service('Movies', function($http, WatchList){
 			var api_key = "ab43c822c34a09bb2595ac9f5d20a5d2";
 			var base_url = "https://api.themoviedb.org/3";
+
 
 			return{
 				search_movies: function(query){

@@ -56,6 +56,14 @@
 				$scope.page = resp.data.page;
 
 				$scope.movie_active = $scope.movies[0];
+
+				var watchlist = WatchList.get_movie_ids();
+				
+				angular.forEach($scope.movies, function(key, val){
+					if(watchlist.indexOf(key.id) !== -1){
+						key.favorite = true;
+					}
+				});
 			});
 
 		});
