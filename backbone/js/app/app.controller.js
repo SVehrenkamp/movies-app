@@ -6,10 +6,14 @@ define([
 	"models/movie.model",
 	"collections/now_playing.collection",
 	"collections/popular.collection",
+	"collections/watchlist.collection",
 	"views/navigation.view",
 	"views/footer.view",
 	"views/movie_listings.view",
-	"views/movie_details.view"
+	"views/active_movie.view",
+	"views/movie_details.view",
+	"views/watchlist.view",
+	"layouts/movie_listings.layout"
 	],function(
 		$,
 		Backbone,
@@ -18,10 +22,14 @@ define([
 		MovieModel,
 		NowPlayingCollection,
 		PopularCollection,
+		WatchlistCollection,
 		NavigationView,
 		FooterView,
 		MovieListingsView,
-		MovieDetailsView
+		ActiveMovieView,
+		MovieDetailsView,
+		WatchlistView,
+		MovieListingsLayout
 		){
 
 		var AppController = Marionette.Controller.extend({
@@ -43,17 +51,40 @@ define([
 			},
 
 			nowPlaying: function(){
+				var movie_listings_layout = new MovieListingsLayout({header: "Now Playing"});
+				
 				var collection = new NowPlayingCollection();
-				var now_playing_view = new MovieListingsView({collection:collection, header:"Now Playing"});
-				app.layout.content.show(now_playing_view);
+				var now_playing_view = new MovieListingsView({collection:collection});
+
+				var active_movie_view = new ActiveMovieView({model:new Backbone.Model()});
+
+				var watchlist_collection = new WatchlistCollection();
+				var watchlist_view = new WatchlistView({collection:watchlist_collection});
+
+				app.layout.content.show(movie_listings_layout);
+				movie_listings_layout.movies.show(now_playing_view);
+				movie_listings_layout.activeMovie.show(active_movie_view);
+				movie_listings_layout.watchlist.show(watchlist_view);
+
 
 				return this;
 
 			},
 			popular: function(){
+				var movie_listings_layout = new MovieListingsLayout({header: "Popular Movies"});
+
 				var collection = new PopularCollection();
 				var popular_view = new MovieListingsView({collection:collection, header: "Popular Movies"});
-				app.layout.content.show(popular_view);
+
+				var active_movie_view = new ActiveMovieView({model:new Backbone.Model()});
+
+				var watchlist_collection = new WatchlistCollection();
+				var watchlist_view = new WatchlistView({collection:watchlist_collection});
+
+				app.layout.content.show(movie_listings_layout);
+				movie_listings_layout.movies.show(popular_view);
+				movie_listings_layout.activeMovie.show(active_movie_view);
+				movie_listings_layout.watchlist.show(watchlist_view);
 			},
 			movie_details: function(id){
 				var model = new MovieModel({query:id});

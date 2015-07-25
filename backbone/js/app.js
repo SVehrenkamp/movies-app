@@ -14,6 +14,7 @@ define(function(require, exports, module) {
   	app.addRegions({'main':'#wrapper'});
   	app.layout = new AppLayout();
 
+
   	app.controller = new AppController();
   	app.router = new AppRouter({controller: app.controller});
   });

@@ -5,6 +5,7 @@ requirejs.config({
 		'models':'../models',
 		'collections':'../collections',
 		'views':'../views',
+		'layouts':'../layouts',
     	"handlebars":"handlebars/handlebars.min",
 		"marionette": "./marionette/lib/backbone.marionette.min",
 		'backbone.wreqr' : './backbone.wreqr/lib/backbone.wreqr.min',

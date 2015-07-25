@@ -30,11 +30,12 @@ define([
 			},
 			showMovie: function(){
 				console.log(this.model.get('title'));
-				app.vent.trigger('movie_selected', this.model);
+				app.vent.trigger('MOVIE_ACTIVE', this.model);
 			},
 			addMovie: function(e){
 				e.stopPropagation();
-				console.log(this.model.set({favorite: true}));
+				this.model.set({favorite: true});
+				app.vent.trigger('MOVIE_ADDED', this.model);
 			}
 
 		});
