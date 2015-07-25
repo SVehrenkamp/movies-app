@@ -23,6 +23,7 @@
   "dependencies": {
     "backbone": "~1.2.1",
     "marionette": "~2.4.2",
-    "foundation": "~5.5.2"
+    "foundation": "~5.5.2",
+    "requirejs-text": "~2.0.14"
   }
 }
