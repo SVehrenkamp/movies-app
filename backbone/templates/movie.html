@@ -1,0 +1,19 @@
+<div  class="large-4 small-6 columns movie">
+                  	<a href="javascript:void(0)">
+	                  <img ng-if="movie.poster_path" src="http://image.tmdb.org/t/p/w300{{poster_path}}" />
+                    <img ng-if="!movie.poster_path" src="assets/images/no-image.jpg" />
+	     
+	                  <div class="panel">
+	                    <h5>{{title}}</h5>
+	                    <h6 class="subheader">Rating: {{vote_average}}</h6>
+                      <div class="list-icon">
+                        <span ng-if="!movie.favorite" ng-click="add_movie(movie);" class="fi-plus add-btn"></span>
+                      </div>
+                      <div class="list-icon">
+                        <span ng-if="movie.favorite" ng-click="remove_movie(movie)" class="fi-check favorite"></span>
+                      </div>
+	                  </div>
+
+	              	</a>
+
+                </div>

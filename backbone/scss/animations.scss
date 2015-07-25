@@ -1,0 +1,32 @@
+
+@-webkit-keyframes grow{
+    0% {
+        -webkit-transform:scale(0.01);
+    }
+    10% {
+        -webkit-transform:scale(0.05);
+    }
+    20% {
+        -webkit-transform:scale(0.1);
+    }
+    30% {
+        -webkit-transform:scale(0.15);
+    }
+    100% {
+        -webkit-transform:scale(1);
+    }
+}
+
+@-webkit-keyframes fall-in {
+    0% {
+        opacity:0;
+        -webkit-transform:scale(50);
+    }
+    50%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:scale(1);
+    }
+}
